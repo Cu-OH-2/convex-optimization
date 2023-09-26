@@ -75,7 +75,9 @@ $\langle\mathbf{A},\mathbf{B}\rangle=trace(\mathbf{AB}^T)=trace(\mathbf{\mathbf{
 
 ### Q6: Define $f(\mathbf{x})\triangleq \Vert\mathbf{Ax}-\mathbf{b}\Vert_2^2$. Compute $\nabla f(\mathbf{x})$ and $\nabla^2 f(\mathbf{x})$
 
-$(\nabla f(\mathbf{x}))_k=\left( \frac{\partial}{\partial x_k}((\mathbf{Ax})_1-b_1)^T((\mathbf{Ax})_1-b_1),\frac{\partial}{\partial x_k}((\mathbf{Ax})_2-b_2)^T((\mathbf{Ax})_2-b_2),...,\frac{\partial}{\partial x_k}((\mathbf{Ax})_n-b_n)^T((\mathbf{Ax})_n-b_n) \right)^T=\left( \frac{\partial}{\partial x_k}(A_{1k}x_k-b_1)^2,\frac{\partial}{\partial x_k}(A_{2k}x_k-b_2)^2,..., \frac{\partial}{\partial x_k}(A_{nk}x_k-b_n)^2\right)^T=\left( 2A_{1k}(A_{1k}x_k-b_1),2A_{2k}(A_{2k}x_k-b_2),...,2A_{nk}(A_{nk}x_k-b_n) \right)^T$
+$(\nabla f(\mathbf{x}))_k=\left( \frac{\partial}{\partial x_k}((\mathbf{Ax})_1-b_1)^T((\mathbf{Ax})_1-b_1),\frac{\partial}{\partial x_k}((\mathbf{Ax})_2-b_2)^T((\mathbf{Ax})_2-b_2),...,\frac{\partial}{\partial x_k}((\mathbf{Ax})_n-b_n)^T((\mathbf{Ax})_n-b_n) \right)^T=\left( \frac{\partial}{\partial x_k}(A_{1k}x_k-b_1)^2,\frac{\partial}{\partial x_k}(A_{2k}x_k-b_2)^2,..., \frac{\partial}{\partial x_k}(A_{nk}x_k-b_n)^2\right)^T=\left( 2A_{1k}(A_{1k}x_k-b_1),2A_{2k}(A_{2k}x_k-b_2),...,2A_{nk}(A_{nk}x_k-b_n) \right)^T=2\mathbf{A}^T_k(\mathbf{Ax}-\mathbf{b})$
+
+$\nabla f(\mathbf{x})=2\mathbf{A}^T(\mathbf{Ax}-\mathbf{b})$
 
 $\nabla^2 f(\mathbf{x})=$
 
@@ -95,12 +97,7 @@ $\nabla^2 f(\mathbf{x})=$
 
 ### Q9: Define $f(\mathbf{x})\triangleq \log{\sum_{k=1}^n (\exp(x_k))}$. Prove $\nabla^2 f(\mathbf{x})\succeq 0$
 
-$\nabla^2 f(\mathbf{x})=\begin{pmatrix}
-\frac{\exp(x_1)\left(\sum_{k=1}^{n}\exp(x_k)\right)-\exp(x_1)^2}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \frac{-\exp(x_1)\exp(x_2)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \cdots & \frac{-\exp(x_1)\exp(x_n)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} \\
-\frac{-\exp(x_2)\exp(x_1)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \frac{\exp(x_2)\left(\sum_{k=1}^{n}\exp(x_k)\right)-\exp(x_2)^2}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \cdots & \frac{-\exp(x_2)\exp(x_n)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} \\
-\vdots & \vdots & & \vdots \\
-\frac{-\exp(x_n)\exp(x_1)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \frac{-\exp(x_n)\exp(x_2)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \cdots & \frac{\exp(x_n)\left(\sum_{k=1}^{n}\exp(x_k)\right)-\exp(x_n)^2}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2}
-\end{pmatrix}$
+
 
 ---
 

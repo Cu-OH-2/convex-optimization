@@ -94,11 +94,3 @@ $\nabla^2 f(\mathbf{x})=\begin{pmatrix}
 |shoe size|7|8|7|7|8|8|9|7|
 
 ### If one want to distinguish these 8 people by a linear combination of the  3 measurements, what would be a best possible combination?
-
-令 $A=\begin{pmatrix}
-22 & 30 & 23 & 23 & 22 & 21 & 22 & 21\\
-10.4 & 12.2 & 10.5 & 10.9 & 9 & 12.5 & 11.5 & 10.2\\
-7 & 8 & 7 & 7 & 8 & 8 & 9 & 7
-\end{pmatrix}$，
-
-线性判别分析LDA？
