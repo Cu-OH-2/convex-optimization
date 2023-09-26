@@ -21,44 +21,44 @@ $$k_1x_1^Tx_1+k_2x_1^Tx_2+\cdots+k_nx_1^Tx_n=k\Vert x_1\Vert_2=0$$
 
 ---
 
-### 2 show $\det(\bold{I}+\bold{A})=\det(\bold{I}+\bold{\Lambda})$ where $\bold{A}\triangleq \bold{P\Lambda P}^T$
+### 2 show $\det(\mathbf{I}+\mathbf{A})=\det(\mathbf{I}+\mathbf{\Lambda})$ where $\mathbf{A}\triangleq \mathbf{P\Lambda P}^T$
 
 由于 
-$$\bold{I}+\bold{A}=\bold{PIP}^T+\bold{P\Lambda P}^T=\bold{P}(\bold{I}+\bold{\Lambda})\bold{P}^T$$
+$$\mathbf{I}+\mathbf{A}=\mathbf{PIP}^T+\mathbf{P\Lambda P}^T=\mathbf{P}(\mathbf{I}+\mathbf{\Lambda})\mathbf{P}^T$$
 有 
-$$\det(\bold{I}+\bold{A})=\det(\bold{P}(\bold{I}+\bold{\Lambda})\bold{P}^T)=\det(\bold{P})\det(\bold{I}+\bold{\Lambda})\det(\bold{P}^T)$$
+$$\det(\mathbf{I}+\mathbf{A})=\det(\mathbf{P}(\mathbf{I}+\mathbf{\Lambda})\mathbf{P}^T)=\det(\mathbf{P})\det(\mathbf{I}+\mathbf{\Lambda})\det(\mathbf{P}^T)$$
 
-又由 $\bold{P},\bold{P}^T$ 是单位正交矩阵，$\det(\bold{P})=\det(\bold{P}^T)=1$，得 $\det(\bold{I}+\bold{A})=\det(\bold{I}+\bold{\Lambda})$.
+又由 $\mathbf{P},\mathbf{P}^T$ 是单位正交矩阵，$\det(\mathbf{P})=\det(\mathbf{P}^T)=1$，得 $\det(\mathbf{I}+\mathbf{A})=\det(\mathbf{I}+\mathbf{\Lambda})$.
 
 ---
 
-### 3 prove $(\bold{A}+\bold{uv}^T)^{-1}=\bold{A}^{-1}-\frac{\bold{A}^{-1}\bold{uv}^T\bold{A}^{-1} }{1+\bold{v}^T\bold{A}^{-1}\bold{u} }$ where $\bold{v}^T\bold{A}^{-1}\bold{u}\neq 0$
+### 3 prove $(\mathbf{A}+\mathbf{uv}^T)^{-1}=\mathbf{A}^{-1}-\frac{\mathbf{A}^{-1}\mathbf{uv}^T\mathbf{A}^{-1} }{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} }$ where $\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u}\neq 0$
 
 要证 
 
-$$(\bold{A}+\bold{uv}^T)^{-1}=\bold{A}^{-1}-\frac{\bold{A}^{-1}\bold{uv}^T\bold{A}^{-1} }{1+\bold{v}^T\bold{A}^{-1}\bold{u} }$$
+$$(\mathbf{A}+\mathbf{uv}^T)^{-1}=\mathbf{A}^{-1}-\frac{\mathbf{A}^{-1}\mathbf{uv}^T\mathbf{A}^{-1} }{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} }$$
 
  即证 
 
-$$(\bold{A}+\bold{uv}^T)(\bold{A}^{-1}-\frac{\bold{A}^{-1}\bold{uv}^T\bold{A}^{-1} }{1+\bold{v}^T\bold{A}^{-1}\bold{u} })=\bold{I}$$
+$$(\mathbf{A}+\mathbf{uv}^T)(\mathbf{A}^{-1}-\frac{\mathbf{A}^{-1}\mathbf{uv}^T\mathbf{A}^{-1} }{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} })=\mathbf{I}$$
 
-$(\bold{A}+\bold{uv}^T)(\bold{A}^{-1}-\frac{\bold{A}^{-1}\bold{uv}^T\bold{A}^{-1} }{1+\bold{v}^T\bold{A}^{-1}\bold{u} })
-=\bold{AA}^{-1}+\bold{uv}^T\bold{A}^{-1}-\frac{\bold{uv}^T\bold{A}^{-1} }{1+\bold{v}^T\bold{A}^{-1}\bold{u} }-\frac{\bold{uv}^T\bold{A}^{-1}\bold{uv}^T\bold{A}^{-1} }{1+\bold{v}^T\bold{A}^{-1}\bold{u} }
-=\bold{I}+\frac{\bold{uv}^T\bold{A}^{-1}+\bold{uv}^T\bold{A}^{-1}\bold{v}^T\bold{A}^{-1}\bold{u}}{1+\bold{v}^T\bold{A}^{-1}\bold{u} }-\frac{\bold{uv}^T\bold{A}^{-1} }{1+\bold{v}^T\bold{A}^{-1}\bold{u} }-\frac{\bold{uv}^T\bold{A}^{-1}\bold{uv}^T\bold{A}^{-1} }{1+\bold{v}^T\bold{A}^{-1}\bold{u} }
-=\bold{I}+\frac{\bold{uv}^T\bold{A}^{-1}\bold{v}^T\bold{A}^{-1}\bold{u}-\bold{uv}^T\bold{A}^{-1}\bold{uv}^T\bold{A}^{-1} }{1+\bold{v}^T\bold{A}^{-1}\bold{u} }=\bold{I}+\frac{\bold{uv}^T\bold{A}^{-1}(\bold{v}^T\bold{A}^{-1}\bold{u})-\bold{u}(\bold{v}^T\bold{A}^{-1}\bold{u})\bold{v}^T\bold{A}^{-1} }{1+\bold{v}^T\bold{A}^{-1}\bold{u} }
-=\bold{I}+\frac{(\bold{v}^T\bold{A}^{-1}\bold{u})(\bold{u}\bold{v}^T\bold{A}^{-1}-\bold{u}\bold{v}^T\bold{A}^{-1}) }{1+\bold{v}^T\bold{A}^{-1}\bold{u} }=\bold{I}$
+$(\mathbf{A}+\mathbf{uv}^T)(\mathbf{A}^{-1}-\frac{\mathbf{A}^{-1}\mathbf{uv}^T\mathbf{A}^{-1} }{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} })
+=\mathbf{AA}^{-1}+\mathbf{uv}^T\mathbf{A}^{-1}-\frac{\mathbf{uv}^T\mathbf{A}^{-1} }{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} }-\frac{\mathbf{uv}^T\mathbf{A}^{-1}\mathbf{uv}^T\mathbf{A}^{-1} }{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} }
+=\mathbf{I}+\frac{\mathbf{uv}^T\mathbf{A}^{-1}+\mathbf{uv}^T\mathbf{A}^{-1}\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u}}{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} }-\frac{\mathbf{uv}^T\mathbf{A}^{-1} }{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} }-\frac{\mathbf{uv}^T\mathbf{A}^{-1}\mathbf{uv}^T\mathbf{A}^{-1} }{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} }
+=\mathbf{I}+\frac{\mathbf{uv}^T\mathbf{A}^{-1}\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u}-\mathbf{uv}^T\mathbf{A}^{-1}\mathbf{uv}^T\mathbf{A}^{-1} }{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} }=\mathbf{I}+\frac{\mathbf{uv}^T\mathbf{A}^{-1}(\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u})-\mathbf{u}(\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u})\mathbf{v}^T\mathbf{A}^{-1} }{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} }
+=\mathbf{I}+\frac{(\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u})(\mathbf{u}\mathbf{v}^T\mathbf{A}^{-1}-\mathbf{u}\mathbf{v}^T\mathbf{A}^{-1}) }{1+\mathbf{v}^T\mathbf{A}^{-1}\mathbf{u} }=\mathbf{I}$
 
 原命题得证.
 
 ---
 
-### 4 compute the first and second derivative of $g(t)\triangleq f(\bold{x}+t(\bold{y}-\bold{x}))$
+### 4 compute the first and second derivative of $g(t)\triangleq f(\mathbf{x}+t(\mathbf{y}-\mathbf{x}))$
 
-令 $\bold{z}\triangleq \bold{x}+t(\bold{y}-\bold{x})$，则
+令 $\mathbf{z}\triangleq \mathbf{x}+t(\mathbf{y}-\mathbf{x})$，则
 
-$g'(t)=\sum_i{\frac{\partial f(z)}{\partial z_i}}\frac{\partial z_i}{\partial t}=\nabla f(\bold{\bold{x}+t(\bold{y}-\bold{x})})^T \cdot (\bold{y}-\bold{x})$
+$g'(t)=\sum_i{\frac{\partial f(z)}{\partial z_i}}\frac{\partial z_i}{\partial t}=\nabla f(\mathbf{\mathbf{x}+t(\mathbf{y}-\mathbf{x})})^T \cdot (\mathbf{y}-\mathbf{x})$
 
-$g''(t)=\frac{d}{dt} \left(\nabla f(\bold{z})\right) \cdot (\bold{y}-\bold{x})+\nabla f(\bold{z}) \cdot \frac{d}{dt}(\bold{y}-\bold{x})=diag(\nabla^2 f(\bold{\bold{x}+t(\bold{y}-\bold{x})}))^T\cdot (\bold{y}-\bold{x})$
+$g''(t)=\frac{d}{dt} \left(\nabla f(\mathbf{z})\right) \cdot (\mathbf{y}-\mathbf{x})+\nabla f(\mathbf{z}) \cdot \frac{d}{dt}(\mathbf{y}-\mathbf{x})=diag(\nabla^2 f(\mathbf{\mathbf{x}+t(\mathbf{y}-\mathbf{x})}))^T\cdot (\mathbf{y}-\mathbf{x})$
 
 ---
 
@@ -73,11 +73,11 @@ $\nabla^2 f(x,y)=\begin{pmatrix}
 
 ---
 
-### 6 compute the gradient and Hessian of $f(\bold{x})\triangleq \log{\sum_{k=1}^{n}\exp(x_k)}$
+### 6 compute the gradient and Hessian of $f(\mathbf{x})\triangleq \log{\sum_{k=1}^{n}\exp(x_k)}$
 
-$\nabla f(\bold{x})=\left( \frac{exp(x_1)}{\sum_{k=1}^{n}\exp(x_k)},\frac{exp(x_2)}{\sum_{k=1}^{n}\exp(x_k)},...,\frac{exp(x_n)}{\sum_{k=1}^{n}\exp(x_k)}\right)^T$
+$\nabla f(\mathbf{x})=\left( \frac{exp(x_1)}{\sum_{k=1}^{n}\exp(x_k)},\frac{exp(x_2)}{\sum_{k=1}^{n}\exp(x_k)},...,\frac{exp(x_n)}{\sum_{k=1}^{n}\exp(x_k)}\right)^T$
 
-$\nabla^2 f(\bold{x})=\begin{pmatrix}
+$\nabla^2 f(\mathbf{x})=\begin{pmatrix}
 \frac{\exp(x_1)\left(\sum_{k=1}^{n}\exp(x_k)\right)-\exp(x_1)^2}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \frac{-\exp(x_1)\exp(x_2)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \cdots & \frac{-\exp(x_1)\exp(x_n)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} \\
 \frac{-\exp(x_2)\exp(x_1)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \frac{\exp(x_2)\left(\sum_{k=1}^{n}\exp(x_k)\right)-\exp(x_2)^2}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \cdots & \frac{-\exp(x_2)\exp(x_n)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} \\
 \vdots & \vdots & & \vdots \\
