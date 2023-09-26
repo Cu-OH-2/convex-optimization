@@ -75,11 +75,22 @@ $\langle\mathbf{A},\mathbf{B}\rangle=trace(\mathbf{AB}^T)=trace(\mathbf{\mathbf{
 
 ### Q6: Define $f(\mathbf{x})\triangleq \Vert\mathbf{Ax}-\mathbf{b}\Vert_2^2$. Compute $\nabla f(\mathbf{x})$ and $\nabla^2 f(\mathbf{x})$
 
-$(\nabla f(\mathbf{x}))_k=\left( \frac{\partial}{\partial x_k}((\mathbf{Ax})_1-b_1)^T((\mathbf{Ax})_1-b_1),\frac{\partial}{\partial x_k}((\mathbf{Ax})_2-b_2)^T((\mathbf{Ax})_2-b_2),...,\frac{\partial}{\partial x_k}((\mathbf{Ax})_n-b_n)^T((\mathbf{Ax})_n-b_n) \right)^T=\left( \frac{\partial}{\partial x_k}(A_{1k}x_k-b_1)^2,\frac{\partial}{\partial x_k}(A_{2k}x_k-b_2)^2,..., \frac{\partial}{\partial x_k}(A_{nk}x_k-b_n)^2\right)^T=\left( 2A_{1k}(A_{1k}x_k-b_1),2A_{2k}(A_{2k}x_k-b_2),...,2A_{nk}(A_{nk}x_k-b_n) \right)^T=2\mathbf{A}^T_k(\mathbf{Ax}-\mathbf{b})$
+记 $\mathbf{A}=\left(\mathbf{a}_1,\mathbf{a}_2,...,\mathbf{a}_n)\right)^T,\mathbf{a}_i\in\mathbb{R}^{1\times n}$
 
-$\nabla f(\mathbf{x})=2\mathbf{A}^T(\mathbf{Ax}-\mathbf{b})$
+$(\nabla f(\mathbf{x}))_k
+=\frac{\partial}{\partial x_k}((\mathbf{Ax})_1-b_1)^2+\frac{\partial}{\partial x_k}((\mathbf{Ax})_2-b_2)^2+\cdots+\frac{\partial}{\partial x_k}((\mathbf{Ax})_n-b_n)^2
+=\frac{\partial}{\partial x_k}(\mathbf{a}_{1}\mathbf{x}-b_1)^2+\frac{\partial}{\partial x_k}(\mathbf{a}_{2}\mathbf{x}-b_2)^2+\cdots+\frac{\partial}{\partial x_k}(\mathbf{a}_{n}\mathbf{x}-b_n)^2
+=2\mathbf{a}_{1k}(\mathbf{a}_{1}\mathbf{x}-b_1)+2\mathbf{a}_{2k}(\mathbf{a}_{2}\mathbf{x}-b_2)+\cdots+2\mathbf{a}_{nk}(\mathbf{a}_{n}\mathbf{x}-b_n)
+=2\mathbf{a}_{1k}(\mathbf{Ax}-\mathbf{b})_1+2\mathbf{a}_{2k}(\mathbf{Ax}-\mathbf{b})_2+\cdots+2\mathbf{a}_{nk}(\mathbf{Ax}-\mathbf{b})_n
+=\sum_i 2\mathbf{a}_{ik}(\mathbf{Ax}-\mathbf{b})_i$
 
-$\nabla^2 f(\mathbf{x})=$
+$\therefore \nabla f(\mathbf{x})=2\mathbf{A}^T(\mathbf{Ax}-\mathbf{b})$
+
+$(\nabla^2 f(\mathbf{x}))_{ij}
+=\frac{\partial}{\partial x_j}2\mathbf{a}_{1i}(\mathbf{a}_{1}\mathbf{x}-b_1)+\frac{\partial}{\partial x_j}2\mathbf{a}_{2i}(\mathbf{a}_{2}\mathbf{x}-b_2)+\cdots+\frac{\partial}{\partial x_j}2\mathbf{a}_{ni}(\mathbf{a}_{n}\mathbf{x}-b_n)
+=\sum_k 2\mathbf{a}_{ki}\mathbf{a}_{kj}$
+
+$\therefore \nabla^2 f(\mathbf{x})=2\mathbf{A}^T\mathbf{A}$
 
 ---
 
