@@ -94,9 +94,26 @@ $\therefore \nabla^2 f(\mathbf{x})=2\mathbf{A}^T\mathbf{A}$
 
 ---
 
-### Q7: Define $f(\mathbf{x})\triangleq \Vert\mathbf{Ax}-\mathbf{xx}^T\Vert_F^2$. Compute $\nabla f(\mathbf{x})$ and $\nabla^2 f(\mathbf{x})$
+### Q7: Define $f(\mathbf{x})\triangleq \Vert\mathbf{A}-\mathbf{xx}^T\Vert_F^2$. Compute $\nabla f(\mathbf{x})$ and $\nabla^2 f(\mathbf{x})$
 
+假设 $\mathbf{x}\in\mathbb{R}^n$：
 
+$(\nabla f(\mathbf{x}))_k
+=\frac{\partial}{\partial x_k}\sum_{i,j}(A_{ij}-x_ix_j)^2
+=\sum_{i,j}-2(A_{ij}-x_ix_j)\frac{\partial}{\partial x_k}x_ix_j
+=-2(A_{kk}-x_k^2)2x_k-2\sum_{i\neq k}(A_{ik}+A_{ki}-2x_ix_k)x_i
+=-2\sum_{i}(A_{ik}+A_{ki}-2x_ix_k)x_i
+=4x_k\sum_i x_i^2-2\sum_i x_iA_{ik}-2\sum_i x_iA_{ki}$
+
+$\therefore \nabla f(\mathbf{x})=4\mathbf{xx}^T\mathbf{x}-2\mathbf{Ax}-2\mathbf{A}^T\mathbf{x}$
+
+$(\nabla^2 f(\mathbf{x}))_{ij}
+=-\frac{\partial}{\partial x_j}2\sum_{k}(A_{ki}+A_{ik}-2x_kx_i)x_k
+=\begin{cases}
+\sum_k 4x_k^2+8x_i^2-4 A_{ii},i=j\\
+8x_ix_j-2A_{ij}-2A_{ji},i\neq j\end{cases}$
+
+$\therefore \nabla^2 f(\mathbf{x})=8\mathbf{xx}^T+4\mathbf{x}^T\mathbf{xI}-2\mathbf{A}-2\mathbf{A}^T$
 
 ---
 
