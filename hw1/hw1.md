@@ -62,7 +62,8 @@ $trace(\mathbf{AB})=\sum_{i=1}^n(\mathbf{AB})_{ii}=\sum_{i=1}^n\sum_{j=1}^m \mat
 
 先证充分性 $\mathbf{A}\succeq 0\Rightarrow \langle\mathbf{A},\mathbf{B}\rangle\ge 0, \forall\mathbf{B}\succeq 0$：\
 特征值分解 $\mathbf{A}=\mathbf{P}^T\mathbf{CP},\mathbf{B}^T=\mathbf{Q}^T\mathbf{D}\mathbf{Q}$，其中 $\mathbf{P},\mathbf{Q}$ 为单位正交阵\
-$\langle\mathbf{A},\mathbf{B}\rangle=trace(\mathbf{AB}^T)=trace(\mathbf{\mathbf{P}^T\mathbf{CPQ}^T\mathbf{D}^T\mathbf{Q}})=trace(\mathbf{CDP}^T\mathbf{P}\mathbf{Q}^T\mathbf{Q})=trace(\mathbf{CD})\ge 0$
+$\langle\mathbf{A},\mathbf{B}\rangle=trace(\mathbf{AB}^T)=trace(\mathbf{P}^T\mathbf{CPQ}^T\mathbf{D}^T\mathbf{Q})=trace(\mathbf{CPQ}^T\mathbf{D}^T\mathbf{Q}\mathbf{P}^T)$\
+由于 $\mathbf{PQ}^T\mathbf{D}^T\mathbf{Q}\mathbf{P}^T$ 对角元素非负，$trace(\mathbf{CPQ}^T\mathbf{D}^T\mathbf{Q}\mathbf{P}^T)\ge 0$，即 $\langle\mathbf{A},\mathbf{B}\rangle \ge 0$
 
 再证必要性 $\langle\mathbf{A},\mathbf{B}\rangle\ge 0,\forall\mathbf{B}\succeq 0 \Rightarrow \mathbf{A}\succeq 0$：\
 假设 $\mathbf{A}\nsucceq0$，则 $\exists \mathbf{u}\neq 0,\mathbf{u}^T\mathbf{Au}<0$\
@@ -124,10 +125,23 @@ $\therefore \nabla^2 f(\mathbf{x})=8\mathbf{xx}^T+4\mathbf{x}^T\mathbf{xI}-2\mat
 ---
 
 ### Q9: Define $f(\mathbf{x})\triangleq \log{\sum_{k=1}^n (\exp(x_k))}$. Prove $\nabla^2 f(\mathbf{x})\succeq 0$
+$\nabla^2 f(\mathbf{x})=\begin{pmatrix}
+\frac{\exp(x_1)\left(\sum_{k=1}^{n}\exp(x_k)\right)-\exp(x_1)^2}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \frac{-\exp(x_1)\exp(x_2)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \cdots & \frac{-\exp(x_1)\exp(x_n)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} \\
+\frac{-\exp(x_2)\exp(x_1)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \frac{\exp(x_2)\left(\sum_{k=1}^{n}\exp(x_k)\right)-\exp(x_2)^2}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \cdots & \frac{-\exp(x_2)\exp(x_n)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} \\
+\vdots & \vdots & & \vdots \\
+\frac{-\exp(x_n)\exp(x_1)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \frac{-\exp(x_n)\exp(x_2)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \cdots & \frac{\exp(x_n)\left(\sum_{k=1}^{n}\exp(x_k)\right)-\exp(x_n)^2}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2}
+\end{pmatrix}$
 
+对于任意 $\mathbf{z}\in \mathbb{R}^n$，$\mathbf{z}^T\nabla^2 f(\mathbf{x})\mathbf{z}=\sum_i\sum_j\nabla^2 f(\mathbf{x})z_iz_j=\sum_i\sum_j\exp(x_i)\exp(x_j)z_i^2-\sum_i\exp(x_i)^2z_i^2-\sum_i\sum_{j\neq i}\exp(x_i)\exp(x_j)z_iz_j=\sum_i\sum_j\exp(x_i)\exp(x_j)(z_i^2-z_iz_j)=\frac{1}{2}\sum_i\sum_j\exp(x_i)\exp(x_j)(z_i^2-2z_iz_j+z_j^2)=\frac{1}{2}\sum_i\sum_j\exp(x_i)\exp(x_j)(z_i-z_j)^2\ge 0$
+
+故 $\nabla^2 f(\mathbf{x})\succeq 0$.
 
 
 ---
 
 ### Q10: Find at least one example in either of the following two fields that can be formulated as an optimization problem and show how to formulate it: 1.EDA software 2.cluster scheduling for data centers
+问题：针对一个电路板和一种电路设计，找到电子元件在电路板上的最佳放置位置使得电线总长度最小
 
+$\text{minimize }\sum_{i}\sum_{j}\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}$\
+$\text{subject to }(x_i-x_j)^2+(y_i-y_j)^2\ge(r_i+r_j)^2,\forall i\neq j\\
+\quad\quad\quad\quad\quad d_{min} \le \sqrt{(x_i-x_j)^2+(y_i-y_j)^2} \le d_{max},\forall i\neq j$
