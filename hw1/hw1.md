@@ -132,7 +132,7 @@ $\nabla^2 f(\mathbf{x})=\begin{pmatrix}
 \frac{-\exp(x_n)\exp(x_1)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \frac{-\exp(x_n)\exp(x_2)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2} & \cdots & \frac{\exp(x_n)\left(\sum_{k=1}^{n}\exp(x_k)\right)-\exp(x_n)^2}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2}
 \end{pmatrix}$
 
-对于任意 $\mathbf{z}\in \mathbb{R}^n$，$\mathbf{z}^T\nabla^2 f(\mathbf{x})\mathbf{z}=\sum_i\sum_j\nabla^2 f(\mathbf{x})z_iz_j=\sum_i\sum_j\exp(x_i)\exp(x_j)z_i^2-\sum_i\exp(x_i)^2z_i^2-\sum_i\sum_{j\neq i}\exp(x_i)\exp(x_j)z_iz_j=\sum_i\sum_j\exp(x_i)\exp(x_j)(z_i^2-z_iz_j)=\frac{1}{2}\sum_i\sum_j\exp(x_i)\exp(x_j)(z_i^2-2z_iz_j+z_j^2)=\frac{1}{2}\sum_i\sum_j\exp(x_i)\exp(x_j)(z_i-z_j)^2\ge 0$
+对于任意 $\mathbf{z}\in \mathbb{R}^n$，$\mathbf{z}^T\nabla^2 f(\mathbf{x})\mathbf{z}=\sum_i\sum_j\nabla^2 f(\mathbf{x})z_iz_j=\frac{\sum_i\sum_j\exp(x_i)\exp(x_j)z_i^2-\sum_i\exp(x_i)^2z_i^2-\sum_i\sum_{j\neq i}\exp(x_i)\exp(x_j)z_iz_j}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2}=\frac{\sum_i\sum_j\exp(x_i)\exp(x_j)(z_i^2-z_iz_j)}{\left(\sum_{k=1}^{n}\exp(x_k)\right)^2}=\frac{\sum_i\sum_j\exp(x_i)\exp(x_j)(z_i^2-2z_iz_j+z_j^2)}{2\left(\sum_{k=1}^{n}\exp(x_k)\right)^2}=\frac{\sum_i\sum_j\exp(x_i)\exp(x_j)(z_i-z_j)^2}{2\left(\sum_{k=1}^{n}\exp(x_k)\right)^2}\ge 0$
 
 故 $\nabla^2 f(\mathbf{x})\succeq 0$.
 
