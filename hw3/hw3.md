@@ -1,4 +1,4 @@
-> ## Duality
+## Duality
 ### 5.3
 Lagrangian function:
 $$L(x,\lambda)=c^Tx+\lambda f(x)$$
