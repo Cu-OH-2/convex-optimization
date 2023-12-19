@@ -415,7 +415,7 @@ KKT conditions:
 1. Primal constraints: $Gx^*-h=0$
 2. Dual constraints: None
 3. Complementary slackness: None
-4. Gradient of Lagrangian with respect to 𝐱 vanishes: $2A^TAx^*+G^T\nu-2A^Tb=0$
+4. Gradient of Lagrangian with respect to $x$ vanishes: $2A^TAx^*+G^T\nu-2A^Tb=0$
 
 According to the KKT conditions, we can solve the equations and get:
 $$\nu^*=2(G(A^TA)^{-1}G^T)^{-1}(G(A^TA)^{-1}A^Tb-h)$$
@@ -433,7 +433,7 @@ KKT conditions:
 1. Primal constraints: $X^*s=y,X^*\succ 0$
 2. Dual constraints: None
 3. Complementary slackness: None
-4. Gradient of Lagrangian with respect to 𝐱 vanishes: $I-(X^*)^{-1}+\frac{1}{2}(\lambda s^T+s\lambda^T)=0$
+4. Gradient of Lagrangian with respect to $x$ vanishes: $I-(X^*)^{-1}+\frac{1}{2}(\lambda s^T+s\lambda^T)=0$
 
 According to the KKT conditions:
 
